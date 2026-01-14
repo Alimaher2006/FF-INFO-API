@@ -50,7 +50,7 @@ def get_headers():
         "Accept-Encoding": "gzip",
         "Content-Type": "application/x-www-form-urlencoded",
         "Connection": "Keep-Alive",
-        "ReleaseVersion": "OB51",
+        "ReleaseVersion": "OB52",
         "X-GA": "v1 1",
         "X-Requested-With": "com.dts.freefireth"
     }
@@ -116,3 +116,4 @@ def favicon():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5552)
+
