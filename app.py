@@ -35,7 +35,7 @@ def get_api_endpoint(region):
         "US": "https://client.us.freefiremobile.com/GetPlayerPersonalShow",
         "SAC": "https://client.us.freefiremobile.com/GetPlayerPersonalShow",
         "NA": "https://client.us.freefiremobile.com/GetPlayerPersonalShow",
-        "default": "https://clientbp.ggblueshark.com/GetPlayerPersonalShow"
+        "default": "https://clientbp.ggpolarbear.com/GetPlayerPersonalShow"
     }
     return endpoints.get(region, endpoints["default"])
 
@@ -116,5 +116,6 @@ def favicon():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5552)
+
 
 
