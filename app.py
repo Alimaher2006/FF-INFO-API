@@ -17,7 +17,7 @@ iv = "6oyZDr22E3ychjM%"
 def get_jwt_from_remote():
     try:
         BYPASS = "mmyXBAgkHEjf4lpf4k8I29RswgaTclZ4"
-        url = "https://ff-jwt-alis-projects-afe2993a.vercel.app/token?uid=3996382218&password=1FD175170B35C52093D16569160DBC46FB2C071F24429AE7BCBE04A596AB8350"
+        url = "https://ff-jwt-alis-projects-afe2993a.vercel.app/token?uid=4150025367&password=C53045CC23E1206E99657B57352AA5694E92BB15AB94B48104BC77E97C1BCBEC"
         response = requests.get(url, timeout=5)
         if response.status_code == 200:
             data = response.json()
@@ -117,6 +117,7 @@ def favicon():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5552)
+
 
 
 
