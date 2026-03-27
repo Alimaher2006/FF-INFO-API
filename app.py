@@ -17,8 +17,8 @@ iv = "6oyZDr22E3ychjM%"
 def get_jwt_from_remote():
     try:
         BYPASS = "mmyXBAgkHEjf4lpf4k8I29RswgaTclZ4"
-        url = "https://ff-jwt-alis-projects-afe2993a.vercel.app/token?uid=4150025367&password=C53045CC23E1206E99657B57352AA5694E92BB15AB94B48104BC77E97C1BCBEC"
-        response = requests.get(url, timeout=5)
+        url = "https://jwt-pro-delta.vercel.app/token?uid=4150025367&password=C53045CC23E1206E99657B57352AA5694E92BB15AB94B48104BC77E97C1BCBEC"
+        response = requests.get(url, timeout=10)
         if response.status_code == 200:
             data = response.json()
             return data.get("token")
