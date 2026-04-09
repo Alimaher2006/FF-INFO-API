@@ -51,7 +51,7 @@ def get_headers():
         "Accept-Encoding": "gzip",
         "Content-Type": "application/x-www-form-urlencoded",
         "Connection": "Keep-Alive",
-        "ReleaseVersion": "OB52",
+        "ReleaseVersion": "OB53",
         "X-GA": "v1 1",
         "X-Requested-With": "com.dts.freefireth"
     }
