@@ -7,6 +7,8 @@ from data_pb2 import AccountPersonalShowInfo
 from google.protobuf.json_format import MessageToDict
 import uid_generator_pb2
 import threading
+import random
+import json
 
 app = Flask(__name__)
 
@@ -14,19 +16,25 @@ app = Flask(__name__)
 key = "Yg&tc%DEuh6%Zc^8"
 iv = "6oyZDr22E3ychjM%"
 
-def get_jwt_from_remote():
+def get_random_tokens():
+    with open("token_me.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    return data
+    
+def get_jwt_from_local():
     try:
-        BYPASS = "mmyXBAgkHEjf4lpf4k8I29RswgaTclZ4"
-        url = "https://jwt-pro-delta.vercel.app/token?uid=4150025367&password=C53045CC23E1206E99657B57352AA5694E92BB15AB94B48104BC77E97C1BCBEC"
-        response = requests.get(url, timeout=10)
-        if response.status_code == 200:
-            data = response.json()
-            return data.get("token")
-        else:
-            print("Failed to get JWT:", response.text)
+        with open("token_me.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        if not data:
             return None
+
+        item = random.choice(data)   # اختيار عشوائي
+        return item.get("token")
+
     except Exception as e:
-        print("Error fetching JWT:", str(e))
+        print("Error reading local token:", e)
         return None
 
 def get_api_endpoint(region):
@@ -41,7 +49,7 @@ def get_api_endpoint(region):
     return endpoints.get(region, endpoints["default"])
 
 def get_headers():
-    token = get_jwt_from_remote()
+    token = get_jwt_from_local()
     if not token:
         raise Exception("فشل في الحصول على التوكن من الموقع الخارجي")
     return {
